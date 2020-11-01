@@ -19,14 +19,11 @@ def regleKoch(chaine):
     nouvelleChaine = ''    # on crée une nouvelle chaine de caractères VIDE
     for lettre in chaine:  # on épelle la chaine de caractères donnée en paramètres
         if lettre == 'F':  # si dans l'ancienne chaine, il y a un 'F'
-            nouvelleChaine = nouvelleChaine + 'F-G+F+G-F'  # alors, on écrit F+F--F+F dans la nouvelle chaine 
+            nouvelleChaine = nouvelleChaine + 'F-G+F+G-F'  # alors, on écrit F+F--F+F dans la nouvelle chaine
+        elif lettre == 'G' :
+            nouvelleChaine = nouvelleChaine + 'GG'
         else :
-            nouvelleChaine = nouvelleChaine + lettre  # sinon, on reporte la lettre telle quelle
-        if lettre == 'G':  
-            nouvelleChaine = nouvelleChaine + 'F-G+F+G-F'
-        else :
-            nouvelleChaine = nouvelleChaine + lettre  
-
+            nouvelleChaine = nouvelleChaine + lettre
     return nouvelleChaine
 
 
@@ -45,18 +42,18 @@ def courbeKoch(motifInitial, niter):
 #courbe = courbeKoch('F',3)
 #dessiner(courbe,50, 60)
 
-def carre(motifInitial, niter):
+def triangle(motifInitial, niter):
     courbe = courbeKoch(motifInitial, niter)
     carre = ''
-    for _ in range(5):
-        carre += courbe
-        carre += 'F+F--F+F'
-    return carre
+    for _ in range(3):
+        triangle += courbe
+        triangle += '--' 
+    return triangle
 
 longueur = 2
-angle = 120
-niter = 5
-dessiner(courbeKoch('F', niter), longueur, angle)
+angle = 60
+niter = 6
+dessiner(courbeKoch('F-G-G',3),40,120)
 
 
 turtle.update()      # accélération du tracé
