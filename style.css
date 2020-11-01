@@ -1,0 +1,28 @@
+body
+{
+    background-color: mediumaquamarine; /* Le fond de la page sera noir */
+    color: darkviolet; /* Le texte de la page sera blanc */
+}
+
+h1{
+    font: italic small-caps bold 32px/2 cursive;
+    }
+    
+ h1,h2,h3,h4,h5{  
+     text-decoration: underline;
+ }
+
+
+body{ 
+    font-family: "Comic Sans MS", "Trebuchet MS", Georgia, serif;
+}
+
+
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+{
+}
